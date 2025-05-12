@@ -1,0 +1,56 @@
+{
+  "name": "lol-teammate-tracker",
+  "version": "1.0.0",
+  "description": "A desktop application that tracks and analyzes League of Legends teammate performance",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "league-of-legends",
+    "riot-api",
+    "electron",
+    "stats-tracker"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "chart.js": "^4.4.0",
+    "dotenv": "^16.3.1",
+    "electron-store": "^8.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "electron": "^27.1.0",
+    "electron-builder": "^24.6.4",
+    "electron-reload": "latest"
+  },
+  "build": {
+    "appId": "com.yourname.lolteamtracker",
+    "productName": "LoL Teammate Tracker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.env",
+      "!config.json",
+      "!{.git,.gitignore,.idea,.vscode,docs,node_modules,tests}/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.games"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
